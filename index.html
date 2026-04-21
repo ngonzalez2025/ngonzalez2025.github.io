@@ -47,8 +47,8 @@
         }
 
         .profile-img {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             border: 2.5px solid var(--primary);
@@ -56,11 +56,11 @@
             margin-bottom: 15px;
         }
 
-        h1 { margin: 10px 0 5px; font-size: 1.5rem; color: #fff; letter-spacing: -1px; }
+        h1 { margin: 10px 0 5px; font-size: 1.6rem; color: #fff; }
         
         .badge {
             color: var(--primary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: bold;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -68,6 +68,7 @@
             display: block;
         }
 
+        /* --- AQUÍ ESTÁ EL CAMBIO PARA QUE SE VEAN UNO DEBAJO DE OTRO --- */
         .console {
             text-align: left;
             background: rgba(0, 0, 0, 0.4);
@@ -76,13 +77,16 @@
             font-size: 0.85rem;
             border-left: 3px solid var(--accent);
             margin-bottom: 20px;
+            display: flex;         /* Activamos Flexbox */
+            flex-direction: column; /* Alineación en columna (vertical) */
+            gap: 8px;              /* Espacio entre cada línea */
         }
 
         .console b { color: var(--accent); }
 
         .progress-container {
             text-align: left;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .progress-label {
@@ -95,10 +99,9 @@
 
         .progress-bar-bg {
             width: 100%;
-            height: 12px;
+            height: 10px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
-            border: 1px solid rgba(0, 255, 136, 0.2);
             overflow: hidden;
         }
 
@@ -107,36 +110,23 @@
             height: 100%;
             background: linear-gradient(90deg, var(--primary), var(--accent));
             box-shadow: 0 0 10px var(--accent);
-            border-radius: 10px;
             animation: loading 2s ease-out forwards;
         }
 
-        @keyframes loading {
-            from { width: 0%; }
-            to { width: 25%; }
-        }
+        @keyframes loading { from { width: 0%; } to { width: 25%; } }
 
         .tech-stack {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-bottom: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 15px;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 12px;
         }
 
-        .tech-icon {
-            font-size: 1.5rem;
-            color: #94a3b8;
-            transition: all 0.3s ease;
-        }
-
-        .tech-icon:hover {
-            color: var(--primary);
-            transform: translateY(-5px);
-            filter: drop-shadow(0 0 8px var(--primary));
-        }
+        .tech-icon { font-size: 1.4rem; color: #94a3b8; transition: 0.3s; }
+        .tech-icon:hover { color: var(--primary); transform: translateY(-3px); }
 
         .cert-tag {
             background: rgba(0, 255, 136, 0.1);
@@ -159,16 +149,8 @@
             margin-top: 25px;
         }
 
-        .social-btns a {
-            color: #f1f5f9;
-            font-size: 1.6rem;
-            transition: 0.3s;
-        }
-
-        .social-btns a:hover {
-            color: var(--primary);
-            transform: scale(1.2);
-        }
+        .social-btns a { color: #f1f5f9; font-size: 1.6rem; transition: 0.3s; }
+        .social-btns a:hover { color: var(--primary); transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -180,9 +162,9 @@
         <span class="badge">Future TIC Engineer</span>
 
         <div class="console">
-            <code><b>> spawn:</b> Vélez-Málaga, Málaga 🇪🇸</code>
-            <code><b>> university:</b> UMA (Informática)</code>
-            <code><b>> status:</b> Learning code...</code>
+            <span><b>> spawn:</b> Vélez-Málaga, Málaga 🇪🇸</span>
+            <span><b>> university:</b> UMA (Informática)</span>
+            <span><b>> status:</b> Learning code...</span>
         </div>
 
         <div class="progress-container">
@@ -196,10 +178,10 @@
         </div>
 
         <div class="tech-stack">
-            <i class="fab fa-java tech-icon" title="Java"></i>
-            <i class="fab fa-python tech-icon" title="Python"></i>
-            <i class="fab fa-html5 tech-icon" title="HTML5"></i>
-            <span class="tech-icon" title="C++" style="font-weight: bold; font-size: 1.2rem; font-family: sans-serif;">C++</span>
+            <i class="fab fa-java tech-icon"></i>
+            <i class="fab fa-python tech-icon"></i>
+            <i class="fab fa-html5 tech-icon"></i>
+            <span class="tech-icon" style="font-weight:bold; font-size:1.1rem;">C++</span>
         </div>
 
         <div class="cert-tag">
@@ -209,7 +191,7 @@
         <div class="social-btns">
             <a href="https://github.com/ngonzalez2025" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/natalia-del-carmen-gonz%C3%A1lez-onieva-03725b308/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:tu-email@ejemplo.com"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:tu-correo@uma.es"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 
