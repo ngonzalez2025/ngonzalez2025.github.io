@@ -3,51 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Future TIC Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>NGonzalez | Future TIC Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #0f172a; color: #f1f5f9; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-        .card { max-width: 500px; background: #1e293b; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #38bdf8; margin-bottom: 20px; }
-        h1 { color: #ffffff; margin: 10px 0; font-size: 1.8rem; }
-        .title-tag { color: #38bdf8; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; display: block; margin-bottom: 20px; }
-        .bio-section { text-align: left; border-top: 1px solid #334155; padding-top: 20px; font-size: 0.95rem; }
-        .lang-flag { font-size: 0.8rem; color: #94a3b8; font-weight: bold; }
-        
-        /* Nueva sección de certificados */
-        .cert-section { margin-top: 20px; text-align: left; background: #334155; padding: 15px; border-radius: 10px; border-left: 4px solid #00ff88; }
-        .cert-title { font-size: 0.9rem; font-weight: bold; color: #00ff88; margin-bottom: 5px; display: block; }
-        .cert-item { font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --bg: #0f172a;
+            --glass: rgba(30, 41, 59, 0.7);
+        }
 
-        .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 20px; }
-        .social-links a { color: #f1f5f9; font-size: 1.5rem; transition: color 0.3s, transform 0.3s; }
-        .social-links a:hover { color: #38bdf8; transform: translateY(-3px); }
+        body {
+            font-family: 'Fira Code', monospace, sans-serif;
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #334155);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #f1f5f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* Efecto de brillo superior */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), transparent, var(--secondary));
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            padding: 5px;
+            background: var(--bg);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover { transform: scale(1.05) rotate(5deg); }
+
+        h1 { margin: 10px 0 5px; font-size: 1.8rem; letter-spacing: -1px; }
+        
+        .badge {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 1px solid var(--primary);
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .bio {
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        /* Tech Stack */
+        .skills-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .skill-icon {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+        .skill-icon:hover { color: var(--primary); }
+
+        /* B1 Level */
+        .cert-tag {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .social-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-btns a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-btns a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+        }
+
+        code { color: var(--primary); font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <img src="foto.jpg" alt="Foto de Perfil" class="profile-img">
-        <h1>Natalia del Carmen Gonzalez Onieva</h1>
-        <span class="title-tag">Future TIC Engineer</span>
 
-    
-        <div class="bio-section">
-            <p><span class="lang-flag">ES:</span> Estudié en el <strong>I.E.S. Almenara</strong>. Tras bachillerato, logré entrar en la carrera de mis sueños: Ingeniería Informática (2025 - Presente). Ahora estoy centrada en aprender y trato de dar lo mejor de mí cada día.</p>
-            <p><span class="lang-flag">EN:</span> I studied at <strong>I.E.S. Almenara</strong>. After high school, I started my dream degree: Computer Engineering (2025 - Present). Now I'm focused on learning and I try to do my best every day.</p>
+    <div class="container">
+        <img src="foto.jpg" alt="Dev" class="profile-img">
+        <h1>NGonzalez</h1>
+        <div class="badge">Future TIC Engineer</div>
+
+        <div class="bio">
+            <p><code>> status:</code> Estudiando Ingeniería Informática en la UMA (2025-Presente).</p>
+            <p><code>> goal:</code> Learning to build the future, one line of code at a time.</p>
         </div>
 
-        <div class="cert-section">
-            <span class="cert-title"><i class="fas fa-certificate"></i> Certificaciones / Certifications</span>
-            <div class="cert-item">
-                <i class="fas fa-medal" style="color: #ffd700;"></i> English B1 Level (PET)
-            </div>
+        <div class="skills-grid">
+            <i class="fab fa-python skill-icon" title="Python"></i>
+            <i class="fab fa-js skill-icon" title="JavaScript"></i>
+            <i class="fas fa-database skill-icon" title="SQL"></i>
+            <i class="fab fa-git-alt skill-icon" title="Git"></i>
         </div>
 
-        <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+        <div class="cert-tag">
+            <i class="fas fa-award"></i> English B1 Level Certified
+        </div>
+
+        <div class="social-btns">
+            <a href="https://github.com/ngonzalez2025" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:tu-email@ejemplo.com"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
+
 </body>
 </html>
