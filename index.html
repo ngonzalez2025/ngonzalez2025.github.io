@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Future TIC Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #0f172a; color: #f1f5f9; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        .card { max-width: 500px; background: #1e293b; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #38bdf8; margin-bottom: 20px; }
+        h1 { color: #ffffff; margin: 10px 0; font-size: 1.8rem; }
+        .title-tag { color: #38bdf8; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; display: block; margin-bottom: 20px; }
+        .bio-section { text-align: left; border-top: 1px solid #334155; padding-top: 20px; font-size: 0.95rem; }
+        .lang-flag { font-size: 0.8rem; color: #94a3b8; font-weight: bold; }
+        
+        /* Nueva sección de certificados */
+        .cert-section { margin-top: 20px; text-align: left; background: #334155; padding: 15px; border-radius: 10px; border-left: 4px solid #00ff88; }
+        .cert-title { font-size: 0.9rem; font-weight: bold; color: #00ff88; margin-bottom: 5px; display: block; }
+        .cert-item { font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
+
+        .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: #f1f5f9; font-size: 1.5rem; transition: color 0.3s, transform 0.3s; }
+        .social-links a:hover { color: #38bdf8; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="foto.jpg" alt="Foto de Perfil" class="profile-img">
+        <h1>NGonzalez</h1>
+        <span class="title-tag">Future TIC Engineer</span>
+        
+        <div class="bio-section">
+            <p><span class="lang-flag">ES:</span> Estudié en el <strong>I.E.S. Almenara</strong>. Tras bachillerato, logré entrar en la carrera de mis sueños: Ingeniería Informática (2025 - Presente). Ahora estoy centrada en aprender y trato de dar lo mejor de mí cada día.</p>
+            <p><span class="lang-flag">EN:</span> I studied at <strong>I.E.S. Almenara</strong>. After high school, I started my dream degree: Computer Engineering (2025 - Present). Now I'm focused on learning and I try to do my best every day.</p>
+        </div>
+
+        <div class="cert-section">
+            <span class="cert-title"><i class="fas fa-certificate"></i> Certificaciones / Certifications</span>
+            <div class="cert-item">
+                <i class="fas fa-medal" style="color: #ffd700;"></i> English B1 Level (PET)
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</body>
+</html>
