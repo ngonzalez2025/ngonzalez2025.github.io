@@ -3,194 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natalia del Carmen Gonzalez Onieva| Future TIC Engineer</title>
+    <title>NGonzalez | Future TIC Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #00d2ff;
-            --secondary: #3a7bd5;
+            --primary: #38bdf8;
             --bg: #0f172a;
-            --glass: rgba(30, 41, 59, 0.7);
+            --text: #f1f5f9;
+            --glass: rgba(30, 41, 59, 0.8);
         }
 
         body {
-            font-family: 'Fira Code', monospace, sans-serif;
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #334155);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            color: #f1f5f9;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            color: var(--text);
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            line-height: 1.5;
         }
 
         .container {
             width: 90%;
-            max-width: 450px;
+            max-width: 400px;
             background: var(--glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 40px 30px;
+            border-radius: 28px;
+            padding: 40px 25px;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-
-        /* Efecto de brillo superior */
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(45deg, var(--primary), transparent, var(--secondary));
-            border-radius: 24px;
-            z-index: -1;
-            opacity: 0.3;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         .profile-img {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
+            object-fit: cover;
             border: 3px solid var(--primary);
-            padding: 5px;
-            background: var(--bg);
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
         }
 
-        .profile-img:hover { transform: scale(1.05) rotate(5deg); }
-
-        h1 { margin: 10px 0 5px; font-size: 1.8rem; letter-spacing: -1px; }
+        h1 { 
+            margin: 0; 
+            font-size: 1.8rem; 
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
         
         .badge {
-            background: rgba(0, 210, 255, 0.1);
             color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: 1px solid var(--primary);
-            display: inline-block;
-            margin-bottom: 25px;
-        }
-
-        .bio {
-            text-align: left;
             font-size: 0.9rem;
-            line-height: 1.6;
-            background: rgba(15, 23, 42, 0.5);
-            padding: 15px;
-            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin: 5px 0 25px 0;
+        }
+
+        .info-box {
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 16px;
+            padding: 20px;
             margin-bottom: 20px;
+            text-align: left;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Tech Stack */
-        .skills-grid {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        .skill-icon {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            transition: color 0.3s;
-        }
-        .skill-icon:hover { color: var(--primary); }
-
-        /* B1 Level */
-        .cert-tag {
+        .info-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(90deg, #10b981, #059669);
-            padding: 10px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            margin-bottom: 25px;
+            gap: 12px;
+            margin-bottom: 12px;
         }
 
+        .info-item:last-child { margin-bottom: 0; }
+
+        .info-item i { width: 20px; color: var(--primary); }
+
+        /* Iconos de Redes Sociales Limpios */
         .social-btns {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 25px;
+            margin-top: 25px;
         }
 
         .social-btns a {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            color: white;
+            color: #94a3b8;
+            font-size: 1.6rem;
             text-decoration: none;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
 
         .social-btns a:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+            color: var(--primary);
+            transform: translateY(-3px);
         }
 
-        code { color: var(--primary); font-weight: bold; }
+        .flag { font-size: 1.2rem; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="foto.jpg" alt="Dev" class="profile-img">
-        <h1>Natalia del Carmen Gonzalez Onieva</h1>
-        <div class="badge">Future TIC Engineer</div>
-        <div class= "badge">
+        <img src="Code Hobby.jpeg" alt="Natalia" class="profile-img">
+        
+        <h1>NGonzalez</h1>
+        <span class="badge">Future TIC Engineer</span>
 
-        <div class="bio">
-            <p><code>> status:</code> Estudiando Ingeniería Informática en la UMA (2025-Presente).</p>
-            <p><code>> goal:</code> Learning to build the future, one line of code at a time.</p>
+        <div class="info-box">
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Vélez-Málaga, Spain <span class="flag">🇪🇸</span></span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Ingeniería Informática (UMA)</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-certificate"></i>
+                <span>English B1 Level (PET)</span>
+            </div>
         </div>
-
-        <div class="skills-grid">
-            <i class="fab fa-python skill-icon" title="Python"></i>
-            <i class="fab fa-js skill-icon" title="JavaScript"></i>
-            <i class="fas fa-database skill-icon" title="SQL"></i>
-            <i class="fab fa-git-alt skill-icon" title="Git"></i>
-        </div>
-
-        <div class="cert-tag">
 
         <div class="social-btns">
-    <a href="https://github.com/ngonzalez2025" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
-    </a>
-
-    <a href="https://www.linkedin.com/in/natalia-del-carmen-gonz%C3%A1lez-onieva-03725b308/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
-
-    <a href="mailto:tu-email@ejemplo.com" title="Email">
-        <i class="fas fa-envelope"></i>
-    </a>
-    
-    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-</div>
+            <a href="https://github.com/ngonzalez2025" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/natalia-del-carmen-gonz%C3%A1lez-onieva-03725b308/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:tu-correo@ejemplo.com"><i class="fas fa-envelope"></i></a>
+        </div>
     </div>
 
 </body>
